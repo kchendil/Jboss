@@ -17,9 +17,9 @@ template "/tmp/jboss_install.properties" do
 end
 
 
-execute "Install EAS" do
+execute "Install Jboss" do
   command " \"#{jboss_build_loc}\" -i silent -f \"/tmp/jboss_install.properties\" "  
-  creates "/opt/novell/sentinel_eas/EASInstall.log"
+  creates "#{jboss_install_loc}/JBossPostgreSQL_InstallLog.log"
   action :run
   
 end
